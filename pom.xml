@@ -9,12 +9,7 @@
 		<groupId>net.frontlinesms.core</groupId>
 		<artifactId>frontlinesms-pom-parent</artifactId>
 		<version>1.7.00-beta-5</version>
-		<relativePath>../pom-parent</relativePath>
 	</parent>
-
-	<scm>
-		<developerConnection>scm:git:git@github.com:${github.projectOwner}/${github.projectName}.git</developerConnection>
-	</scm>
 
 	<repositories>
 		<repository>
@@ -147,13 +142,14 @@
 		<dependency>
 			<groupId>net.frontlinesms.core</groupId>
 			<artifactId>frontlinesms</artifactId>
+			<version>1.7.00-beta-6-wbethiopia</version>
 		</dependency>
 
 		<!-- FrontlineSMS Plugins -->
 		<dependency>
 			<groupId>net.frontlinesms.plugins</groupId>
 			<artifactId>frontlinesms-plugin-forms</artifactId>
-			<version>0.02.33-SNAPSHOT</version>
+			<version>0.02.33-wbethiopia</version>
 		</dependency>
 		<dependency>
 			<groupId>com.masabi.frontlinesms.plugins</groupId>
@@ -163,7 +159,7 @@
 		<dependency>
 			<groupId>net.frontlinesms.plugins</groupId>
 			<artifactId>frontlinesms-plugin-patient-view</artifactId>
-			<version>0.9.0</version>
+			<version>1.1.0-wbethiopia</version>
 		</dependency>
 				
 		<!-- SMS Internet Services -->
