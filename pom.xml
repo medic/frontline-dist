@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.frontlinesms.core</groupId>
 	<artifactId>frontlinesms-dist</artifactId>
@@ -9,6 +10,7 @@
 		<groupId>net.frontlinesms.core</groupId>
 		<artifactId>frontlinesms-pom-parent</artifactId>
 		<version>1.7.00-beta-5</version>
+		<relativePath>../frontlinesms-pom-parent</relativePath>
 	</parent>
 
 	<repositories>
@@ -26,10 +28,10 @@
 				<configuration>
 					<descriptors>
 						<descriptor>src/assemble/distribution.xml</descriptor>
-						
+
 						<!-- Windows build for JET compilation -->
 						<descriptor>src/assemble/windows-jet.xml</descriptor>
-						
+
 						<!-- Linux builds -->
 						<descriptor>src/assemble/linux_i686-dist.xml</descriptor>
 						<descriptor>src/assemble/linux_ia64-dist.xml</descriptor>
@@ -46,9 +48,12 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<!-- THIS PLUGIN IS PLATFORM-DEPENDENT 
-					This will create the FrontlineSMS.app bundle regardless of the platform used.
-					This will ONLY create the Mac distributable disk image (.dmg file) when run on OS X. -->
+				<!--
+					THIS PLUGIN IS PLATFORM-DEPENDENT This will create the
+					FrontlineSMS.app bundle regardless of the platform used. This will
+					ONLY create the Mac distributable disk image (.dmg file) when run
+					on OS X.
+				-->
 				<groupId>net.frontlinesms.build</groupId>
 				<artifactId>osxappbundle-maven-plugin</artifactId>
 				<version>1.0</version>
@@ -79,19 +84,17 @@
 						</fileSet>
 					</additionalBundledClasspathResources>
 				</configuration>
-				<!--<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>bundle</goal>
-						</goals>
-					</execution>
-				</executions>
-			--></plugin>
+				<!--
+					<executions> <execution> <phase>package</phase> <goals>
+					<goal>bundle</goal> </goals> </execution> </executions>
+				-->
+			</plugin>
 			<plugin>
-				<!-- THIS PLUGIN IS PLATFORM-DEPENDENT
-					This will create the FrontlineSMS Windows install package, but will only work
-					if the OS is Windows and Excelsior Jet compiler and packager are installed -->
+				<!--
+					THIS PLUGIN IS PLATFORM-DEPENDENT This will create the FrontlineSMS
+					Windows install package, but will only work if the OS is Windows
+					and Excelsior Jet compiler and packager are installed
+				-->
 				<groupId>net.frontlinesms.build</groupId>
 				<artifactId>jetpackager-maven-plugin</artifactId>
 				<version>0.0.2</version>
@@ -126,15 +129,11 @@
 					<!--<doCompile>false</doCompile>-->
 					<!--<doPack>false</doPack>-->
 				</configuration>
-				<!--<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>jetbuild</goal>
-						</goals>
-					</execution>
-				</executions>
-			--></plugin>
+				<!--
+					<executions> <execution> <phase>package</phase> <goals>
+					<goal>jetbuild</goal> </goals> </execution> </executions>
+				-->
+			</plugin>
 		</plugins>
 	</build>
 
@@ -161,12 +160,41 @@
 			<artifactId>frontlinesms-plugin-patient-view</artifactId>
 			<version>1.1.0-wbethiopia</version>
 		</dependency>
-				
+
 		<!-- SMS Internet Services -->
 		<dependency>
 			<groupId>com.skebby.gateways</groupId>
 			<artifactId>frontlinesms-service-skebby</artifactId>
 			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.joda</groupId>
+			<artifactId>joda-convert</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.frontlinesms.core</groupId>
+			<artifactId>frontlinesms-test</artifactId>
+			<version>0.01.01</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>2.5.6</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
