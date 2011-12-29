@@ -11,3 +11,6 @@ bin/
 
 # Temporary working directory
 temp/
+
+# For macs
+.DS_Store
